@@ -1,0 +1,31 @@
+Error: Incorrect Parameters
+<div>
+    <p id="fromWeb"></p>
+    <p id="secret"></p>
+    <p id="error-message"></p>
+</div>
+<script>
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Get parameters from URL
+        const fromWeb = getUrlParameter('fromWeb');
+        const secret = getUrlParameter('secret');
+
+        // Display the parameters on the page
+        document.getElementById('fromWeb').textContent = 'fromWeb: ' + (fromWeb ? fromWeb : 'Not provided');
+        document.getElementById('secret').textContent = 'Secret: ' + (secret ? secret : 'Not provided');
+
+        // Example of using parameters
+        if (fromWeb === '1' && secret === 'hFUs1562385aAaAfg') {
+            // Perform some action if parameters match
+            console.log('Special access granted');
+            // For example, redirect or show special content
+        } else {
+            // Handle invalid parameters
+            console.log('Invalid parameters');
+        }
+    </script>
