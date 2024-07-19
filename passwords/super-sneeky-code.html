@@ -1,10 +1,16 @@
-Error: Incorrect Parameters
-<div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parameter Check</title>
+</head>
+<body>
     <p id="fromWeb"></p>
     <p id="secret"></p>
     <p id="error-message"></p>
-</div>
-<script>
+
+    <script>
         // Function to get URL parameters
         function getUrlParameter(name) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -19,13 +25,17 @@ Error: Incorrect Parameters
         document.getElementById('fromWeb').textContent = 'fromWeb: ' + (fromWeb ? fromWeb : 'Not provided');
         document.getElementById('secret').textContent = 'Secret: ' + (secret ? secret : 'Not provided');
 
-        // Example of using parameters
+        // Check parameters and display message
         if (fromWeb === '1' && secret === 'hFUs1562385aAaAfg') {
-            // Perform some action if parameters match
+            // Correct parameters: Perform some action (e.g., show special content)
             console.log('Special access granted');
-            // For example, redirect or show special content
+            document.getElementById('error-message').textContent = 'Access Granted';
+            document.getElementById('error-message').style.color = 'green';
         } else {
-            // Handle invalid parameters
+            // Incorrect parameters: Display error message
             console.log('Invalid parameters');
+            document.getElementById('error-message').textContent = 'Error: Incorrect Parameters';
         }
     </script>
+</body>
+</html>
