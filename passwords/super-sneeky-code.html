@@ -27,12 +27,11 @@
 
         // Check parameters and display message
         if (fromWeb === '1' && secret === 'hFUs1562385aAaAfg') {
-            // Correct parameters: Perform some action (e.g., show special content)
+            // Clear the screen and show Base64 text
+            document.body.innerHTML = '<p>' + 'Y29kZS4xZGUzNDk4YT09' + '</p>';
             console.log('Special access granted');
-            document.getElementById('error-message').textContent = 'Access Granted';
-            document.getElementById('error-message').style.color = 'green';
         } else {
-            // Incorrect parameters: Display error message
+            // Display error message
             console.log('Invalid parameters');
             document.getElementById('error-message').textContent = 'Error: Incorrect Parameters';
         }
