@@ -8,6 +8,7 @@
 <body>
     <p id="fromWeb"></p>
     <p id="secret"></p>
+    <p id="base64-text"></p>
     <p id="error-message"></p>
 
     <script>
@@ -25,14 +26,11 @@
         document.getElementById('fromWeb').textContent = 'fromWeb: ' + (fromWeb ? fromWeb : 'Not provided');
         document.getElementById('secret').textContent = 'Secret: ' + (secret ? secret : 'Not provided');
 
-        // Check parameters and display message
+        // Check parameters and display Base64 text
         if (fromWeb === '1' && secret === 'hFUs1562385aAaAfg') {
-            // Clear the screen and show Base64 text
-            document.body.innerHTML = '<p>' + 'Y29kZS4xZGUzNDk4YT09' + '</p>';
+            document.getElementById('base64-text').textContent = 'Y29kZS4xZGUzNDk4YT09'; // Base64 text
             console.log('Special access granted');
         } else {
-            // Display error message
-            console.log('Invalid parameters');
             document.getElementById('error-message').textContent = 'Error: Incorrect Parameters';
         }
     </script>
